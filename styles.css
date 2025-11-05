@@ -1,4 +1,4 @@
-/* Desktop (unverändert edel) */
+/* Desktop-Look (unverändert) */
 :root{
   --bg:#f7f7f9; --panel:#ffffff; --text:#1f2937; --muted:#6b7280; --ink:#0b1220;
   --accent:#111827; --gold:#C9A227; --radius:14px; --shadow:0 10px 30px rgba(17,24,39,.06);
@@ -24,8 +24,7 @@ img{max-width:100%;display:block}
 .nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s ease}
 .nav a:hover::after{width:100%}
 .menu-toggle{display:none}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.1rem;border-radius:999px;border:1px solid #e5e7eb;background:#ffffff;color:#111827;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .15s ease,box-shadow .25s ease}
-.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.1rem;border-radius:999px;border:1px solid #e5e7eb;background:#ffffff;color:#111827;box-shadow:0 2px 6px rgba(0,0,0,.04)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .btn.outline{background:#fff;border-color:#d1d5db;color:#111827}
 
@@ -35,7 +34,7 @@ img{max-width:100%;display:block}
 .hero-inner{padding:6.5rem 0 4.5rem}
 .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .9rem;border-radius:999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb}
 .display{font-family:"Playfair Display", Georgia, serif;font-weight:700;color:var(--ink);font-size:3rem;line-height:1.1;margin:.6rem 0}
-.lead{color:var(--muted);max-width:720px}
+.lead{color:#6b7280;max-width:720px}
 .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.1rem}
 
 /* Sections */
@@ -55,34 +54,38 @@ img{max-width:100%;display:block}
 
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-.gallery img{border-radius:12px;border:1px solid #e5e7eb;filter:grayscale(8%);transition:transform .25s ease,filter .25s ease}
+.gallery img{border-radius:12px;border:1px solid #e5e7eb;filter:grayscale(8%);transition:transform .25s ease, filter .25s ease}
 .gallery img:hover{transform:translateY(-2px);filter:grayscale(0%)}
 
 /* Reservieren */
-.reserve-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;align-items:start}
+.reserve-form{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;align-items:start
+}
 .reserve-form label{display:flex;flex-direction:column;gap:.4rem;color:#111827}
 .reserve-form input{padding:.85rem;border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;color:#111827}
 .reserve-form .span-2{grid-column:span 2}
-.reserve-actions{display:flex;justify-content:flex-end;grid-column:span 2;margin-top:.4rem}
+/* EIN Button – Desktop unten rechts */
+.reserve-submit{grid-column:span 2;justify-self:end}
 .form-msg{margin:.6rem 0 0;color:#166534}
 
-/* Öffnungszeiten & Footer */
-.hours{display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem}
-.hours div{padding:.52rem .75rem;border-radius:10px;background:#f8fafc;border:1px solid #e5e7eb}
+/* Footer */
 .site-footer{border-top:1px solid #e5e7eb;padding:1.2rem 0;margin-top:2rem;background:#ffffff}
 .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .footer-links{display:flex;gap:1rem}
 
-/* Standard: mobile CTA unsichtbar */
+/* Sticky CTA standardmäßig aus */
 .mobile-cta{display:none}
 
-/* ---------------- MOBILE ONLY (≤820px) ---------------- */
-@media (max-width:820px){
+/* -------------------- MOBILE ONLY -------------------- */
+@media (max-width: 1024px){
+  /* Nav-CTA verstecken mit breiterem Breakpoint */
+  .hide-on-mobile{display:none !important;}
+}
+@media (max-width: 820px){
   .container{width:100%;padding-left:18px;padding-right:18px}
 
-  /* Nav: Toggle sichtbar, Links als Dropdown, CTA oben ausgeblendet */
+  /* Mobile Nav */
   .menu-toggle{display:inline-block;border:1px solid #e5e7eb;background:#fff;border-radius:12px;padding:.55rem .7rem;font-size:1.1rem;line-height:1}
-  .hide-sm{display:none} /* Nav-CTA ausblenden */
   .nav-links{
     display:none;position:absolute;right:18px;top:64px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;
     box-shadow:0 20px 40px rgba(0,0,0,.08);padding:6px;min-width:240px;z-index:60
@@ -91,27 +94,24 @@ img{max-width:100%;display:block}
   .nav-links a{display:block;padding:.7rem .85rem;border-radius:10px}
   .nav-links a:hover{background:#f9fafb}
 
-  /* Hero: „Speisekarte“-Button mittig */
+  /* Hero: Button mittig */
   .actions{justify-content:center}
 
-  /* Reservieren: Submit-Button oben & mittig */
+  /* Reservieren: EIN Button oben zentriert */
   .reserve-form{grid-template-columns:1fr}
   .reserve-form .span-2{grid-column:span 1}
-  .reserve-actions{display:none} /* den unteren Button auf Mobile verstecken */
-  .reserve-submit{order:-1;justify-self:center;margin-bottom:.5rem}
+  .reserve-submit{order:-1;justify-self:center;margin-bottom:.4rem}
 
-  /* Gallery 1 Spalte */
+  /* Gallery einspaltig */
   .gallery{grid-template-columns:1fr}
 
-  /* Footer wrap */
-  .footer-grid{flex-wrap:wrap}
-
-  /* Sticky CTA unten mittig, fixiert */
+  /* Sticky CTA unten mittig, plus Body-Abstand */
+  body{padding-bottom:84px} /* verhindert Überdeckung durch Sticky-CTA */
   .mobile-cta{
     position:fixed; left:0; right:0; bottom:0; z-index:70;
     padding:12px 12px calc(env(safe-area-inset-bottom) + 12px);
     background:linear-gradient(180deg, transparent, rgba(255,255,255,.98) 30%);
     display:flex; justify-content:center; align-items:center;
   }
-  .mobile-cta .btn{width:min(520px, 100%)}
+  .mobile-cta .btn{width:min(520px, 100%); text-decoration:none}
 }

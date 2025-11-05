@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ristorante Da Pasquale – Göppingen | Italienische Küche</title>
   <meta name="description" content="Authentische italienische Küche in Göppingen – Pizza aus dem Steinofen, frische Pasta & Antipasti." />
-  <meta name="theme-color" content="#111827" />
   <link rel="icon" type="image/svg+xml" href="logo-dp.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +31,8 @@
         <li><a href="#contact">Kontakt</a></li>
       </ul>
 
-      <!-- Auf Handy ausgeblendet -->
-      <a class="btn cta hide-sm" href="#reservieren">Reservieren</a>
+      <!-- Auf Mobile verstecken -->
+      <a class="btn cta hide-on-mobile" href="#reservieren">Reservieren</a>
     </nav>
   </header>
 
@@ -81,7 +80,7 @@
       <div class="card pad">
         <p>Telefon: <a class="link" href="tel:+497161000000">07161 / 000000</a> · E-Mail: <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
         <form id="reserveForm" class="reserve-form" novalidate>
-          <!-- Auf Handy oben & zentriert (per CSS) -->
+          <!-- EIN Button, wird via CSS je nach Gerät positioniert -->
           <button class="btn primary reserve-submit" type="submit">Anfrage senden</button>
 
           <label><span>Datum</span><input type="date" name="date" required></label>
@@ -89,14 +88,8 @@
           <label><span>Personen</span><input type="number" name="people" min="1" max="12" value="2" required></label>
           <label class="span-2"><span>Name</span><input type="text" name="name" placeholder="Ihr Name" required autocomplete="name"></label>
           <label class="span-2"><span>Telefon</span><input type="tel" name="phone" placeholder="Ihre Telefonnummer" required autocomplete="tel"></label>
-
-          <!-- Auf Desktop unten rechts (per CSS), auf Handy oben -->
-          <div class="reserve-actions">
-            <button class="btn primary" type="submit">Anfrage senden</button>
-          </div>
-
-          <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
         </form>
+        <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
