@@ -2,31 +2,41 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Header-Schatten bei Scroll
-const header = document.querySelector('.site-header');
-const onScroll = () => {
-  if (!header) return;
-  const scrolled = window.scrollY > 6;
-  header.classList.toggle('scrolled', scrolled);
-};
-window.addEventListener('scroll', onScroll);
-onScroll();
-
 // Mobile Menü
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.menu-toggle');
 const links = document.getElementById('nav-links');
+
+const setScrollLock = (lock) => {
+  document.documentElement.style.overflow = lock ? 'hidden' : '';
+  document.body.style.overflow = lock ? 'hidden' : '';
+};
+
 if (toggle && nav && links) {
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    setScrollLock(false);
+  };
+  const openMenu = () => {
+    nav.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    setScrollLock(true);
+  };
+
   toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
+    const open = !nav.classList.contains('open');
+    open ? openMenu() : closeMenu();
   });
+
+  // ESC schließt Menü
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
   // Schließen beim Klicken auf Link (mobile)
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', () => closeMenu());
   });
 }
 

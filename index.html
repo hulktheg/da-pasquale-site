@@ -2,10 +2,12 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Ristorante Da Pasquale – Göppingen | Italienische Küche</title>
   <meta name="description" content="Authentische italienische Küche in Göppingen – Pizza aus dem Steinofen, frische Pasta & Antipasti." />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="icon" type="image/svg+xml" href="logo-dp.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +15,12 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#menu">Zum Inhalt springen</a>
+
   <header class="site-header" aria-label="Hauptnavigation">
     <nav class="nav container" aria-label="Primäre Navigation">
       <a class="brand" href="#home" aria-label="Startseite">
-        <img src="logo-dp.svg" alt="Da Pasquale Logo" class="logo-img" width="36" height="36">
+        <img src="logo-dp.svg" alt="" class="logo-img" width="36" height="36">
         <span class="wordmark">Da Pasquale</span>
       </a>
 
@@ -25,14 +29,14 @@
         ☰
       </button>
 
-      <ul id="nav-links" class="nav-links">
-        <li><a href="#menu">Speisekarte</a></li>
-        <li><a href="#gallery">Galerie</a></li>
-        <li><a href="#hours">Öffnungszeiten</a></li>
-        <li><a href="#contact">Kontakt</a></li>
+      <ul id="nav-links" class="nav-links" role="menu">
+        <li role="none"><a role="menuitem" href="#menu">Speisekarte</a></li>
+        <li role="none"><a role="menuitem" href="#gallery">Galerie</a></li>
+        <li role="none"><a role="menuitem" href="#hours">Öffnungszeiten</a></li>
+        <li role="none"><a role="menuitem" href="#contact">Kontakt</a></li>
       </ul>
 
-      <a class="btn cta" href="#reservieren">Reservieren</a>
+      <a class="btn cta hide-sm" href="#reservieren">Reservieren</a>
     </nav>
   </header>
 
@@ -53,37 +57,37 @@
       <h2>Auszug aus der Speisekarte</h2>
       <div class="card">
         <div class="menu-list">
-          <div class="menu-item">
+          <article class="menu-item">
             <div class="meta">
               <h3>Margherita</h3>
               <p class="desc">Tomatensoße, Fior di Latte, Basilikum</p>
             </div>
             <span class="price">9,50 €</span>
-          </div>
-          <div class="menu-item">
+          </article>
+          <article class="menu-item">
             <div class="meta">
               <h3>Prosciutto e Funghi</h3>
               <p class="desc">Schinken, Champignons, Mozzarella</p>
             </div>
             <span class="price">12,50 €</span>
-          </div>
-          <div class="menu-item">
+          </article>
+          <article class="menu-item">
             <div class="meta">
               <h3>Spaghetti Carbonara</h3>
               <p class="desc">Guanciale, Ei, Pecorino Romano</p>
             </div>
             <span class="price">13,90 €</span>
-          </div>
-          <div class="menu-item">
+          </article>
+          <article class="menu-item">
             <div class="meta">
               <h3>Tagliata di Manzo</h3>
               <p class="desc">Rinderhüfte, Rucola, Parmesan</p>
             </div>
             <span class="price">22,00 €</span>
-          </div>
+          </article>
         </div>
       </div>
-      <div class="note">*Preise und Verfügbarkeit können variieren.</div>
+      <p class="note">*Preise und Verfügbarkeit können variieren.</p>
     </div>
   </section>
 
@@ -91,9 +95,18 @@
     <div class="container">
       <h2>Galerie</h2>
       <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1200&auto=format&fit=crop" alt="Frische Pizza aus dem Steinofen" />
-        <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop" alt="Hausgemachte Pasta" />
-        <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1200&auto=format&fit=crop" alt="Antipasti Auswahl" />
+        <img
+          src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1200&auto=format&fit=crop"
+          alt="Frische Pizza aus dem Steinofen"
+          loading="lazy" decoding="async" />
+        <img
+          src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop"
+          alt="Hausgemachte Pasta"
+          loading="lazy" decoding="async" />
+        <img
+          src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1200&auto=format&fit=crop"
+          alt="Antipasti Auswahl"
+          loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -102,27 +115,27 @@
     <div class="container">
       <h2>Reservieren</h2>
       <div class="card pad">
-        <p>Reservierungen telefonisch unter <a class="link" href="tel:+497161000000">07161 / 000000</a> oder per E-Mail an <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a>.</p>
+        <p class="lead-sm">Telefonisch unter <a class="link" href="tel:+497161000000">07161 / 000000</a> oder per E-Mail an <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a>.</p>
         <form id="reserveForm" class="reserve-form" novalidate>
           <label>
             <span>Datum</span>
-            <input type="date" name="date" required>
+            <input type="date" name="date" required inputmode="numeric">
           </label>
           <label>
             <span>Uhrzeit</span>
-            <input type="time" name="time" required>
+            <input type="time" name="time" required inputmode="numeric">
           </label>
           <label>
             <span>Personen</span>
-            <input type="number" name="people" min="1" max="12" value="2" required>
+            <input type="number" name="people" min="1" max="12" value="2" required inputmode="numeric">
           </label>
           <label class="span-2">
             <span>Name</span>
-            <input type="text" name="name" placeholder="Ihr Name" required>
+            <input type="text" name="name" placeholder="Ihr Name" required autocomplete="name">
           </label>
           <label class="span-2">
             <span>Telefon</span>
-            <input type="tel" name="phone" placeholder="Ihre Telefonnummer" required>
+            <input type="tel" name="phone" placeholder="Ihre Telefonnummer" required autocomplete="tel">
           </label>
           <button class="btn primary" type="submit">Anfrage senden</button>
           <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
@@ -148,7 +161,6 @@
         <p><strong>Adresse:</strong> Hauptstraße 20, 73033 Göppingen</p>
         <p><strong>Telefon:</strong> <a class="link" href="tel:+497161000000">07161 / 000000</a></p>
         <p><strong>E-Mail:</strong> <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
-        <!-- Anfahrt absichtlich entfernt -->
       </div>
     </div>
   </section>
@@ -163,6 +175,11 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Mobile Sticky CTA -->
+  <div class="mobile-cta">
+    <a class="btn primary" href="#reservieren">Jetzt reservieren</a>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
