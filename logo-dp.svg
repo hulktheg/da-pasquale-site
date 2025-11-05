@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6E27A"/>
+      <stop offset="0.5" stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#8D6B1F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="118" fill="#111827"/>
+  <circle cx="128" cy="128" r="118" fill="url(#goldGrad)" opacity="0.12"/>
+  <circle cx="128" cy="128" r="120" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
+  <circle cx="128" cy="128" r="96" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.8"/>
+  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="104" fill="#FFFFFF">DP</text>
+</svg>

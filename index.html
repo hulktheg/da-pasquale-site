@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ristorante Da Pasquale – Göppingen | Italienische Küche</title>
+  <meta name="description" content="Authentische italienische Küche in Göppingen – Pizza aus dem Steinofen, frische Pasta & Antipasti." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="icon" type="image/svg+xml" href="logo-dp.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" aria-label="Hauptnavigation">
+    <nav class="nav container" aria-label="Primäre Navigation">
+      <a class="brand" href="#home" aria-label="Startseite">
+        <img src="logo-dp.svg" alt="Da Pasquale Logo" class="logo-img" width="36" height="36">
+        <span class="wordmark">Da Pasquale</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">
+        ☰
+      </button>
+
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#menu">Speisekarte</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#hours">Öffnungszeiten</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+
+      <a class="btn cta" href="#reservieren">Reservieren</a>
+    </nav>
+  </header>
+
+  <main id="home" class="hero" role="main">
+    <div class="gold-divider" aria-hidden="true"></div>
+    <div class="hero-inner container fade-in">
+      <span class="pill">Ristorante · Pizzeria · Göppingen</span>
+      <h1 class="display">Italienische Küche – elegant & zeitlos</h1>
+      <p class="lead">Fein abgestimmte Klassiker: Steinofen-Pizza, frische Pasta und Antipasti – serviert in entspannter Atmosphäre im Herzen von Göppingen.</p>
+      <div class="actions">
+        <a class="btn primary" href="#menu">Speisekarte</a>
+      </div>
+    </div>
+  </main>
+
+  <section id="menu" class="section">
+    <div class="container">
+      <h2>Auszug aus der Speisekarte</h2>
+      <div class="card">
+        <div class="menu-list">
+          <div class="menu-item">
+            <div class="meta">
+              <h3>Margherita</h3>
+              <p class="desc">Tomatensoße, Fior di Latte, Basilikum</p>
+            </div>
+            <span class="price">9,50 €</span>
+          </div>
+          <div class="menu-item">
+            <div class="meta">
+              <h3>Prosciutto e Funghi</h3>
+              <p class="desc">Schinken, Champignons, Mozzarella</p>
+            </div>
+            <span class="price">12,50 €</span>
+          </div>
+          <div class="menu-item">
+            <div class="meta">
+              <h3>Spaghetti Carbonara</h3>
+              <p class="desc">Guanciale, Ei, Pecorino Romano</p>
+            </div>
+            <span class="price">13,90 €</span>
+          </div>
+          <div class="menu-item">
+            <div class="meta">
+              <h3>Tagliata di Manzo</h3>
+              <p class="desc">Rinderhüfte, Rucola, Parmesan</p>
+            </div>
+            <span class="price">22,00 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="note">*Preise und Verfügbarkeit können variieren.</div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Galerie</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1200&auto=format&fit=crop" alt="Frische Pizza aus dem Steinofen" />
+        <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop" alt="Hausgemachte Pasta" />
+        <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1200&auto=format&fit=crop" alt="Antipasti Auswahl" />
+      </div>
+    </div>
+  </section>
+
+  <section id="reservieren" class="section">
+    <div class="container">
+      <h2>Reservieren</h2>
+      <div class="card pad">
+        <p>Reservierungen telefonisch unter <a class="link" href="tel:+497161000000">07161 / 000000</a> oder per E-Mail an <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a>.</p>
+        <form id="reserveForm" class="reserve-form" novalidate>
+          <label>
+            <span>Datum</span>
+            <input type="date" name="date" required>
+          </label>
+          <label>
+            <span>Uhrzeit</span>
+            <input type="time" name="time" required>
+          </label>
+          <label>
+            <span>Personen</span>
+            <input type="number" name="people" min="1" max="12" value="2" required>
+          </label>
+          <label class="span-2">
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Ihr Name" required>
+          </label>
+          <label class="span-2">
+            <span>Telefon</span>
+            <input type="tel" name="phone" placeholder="Ihre Telefonnummer" required>
+          </label>
+          <button class="btn primary" type="submit">Anfrage senden</button>
+          <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="section">
+    <div class="container">
+      <h2>Öffnungszeiten</h2>
+      <div class="hours">
+        <div><strong>Mo–Sa</strong></div><div>11:30–14:30 · 17:00–21:00</div>
+        <div><strong>So & Feiertag</strong></div><div>geschlossen</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Kontakt</h2>
+      <div class="card pad contact">
+        <p><strong>Adresse:</strong> Hauptstraße 20, 73033 Göppingen</p>
+        <p><strong>Telefon:</strong> <a class="link" href="tel:+497161000000">07161 / 000000</a></p>
+        <p><strong>E-Mail:</strong> <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
+        <!-- Anfahrt absichtlich entfernt -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Ristorante Da Pasquale – Göppingen</p>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
