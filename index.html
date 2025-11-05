@@ -22,7 +22,7 @@
         <span class="wordmark">Da Pasquale</span>
       </a>
 
-      <!-- Mobile Toggle (auf Desktop per CSS ausgeblendet) -->
+      <!-- Mobile Toggle -->
       <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
 
       <ul id="nav-links" class="nav-links">
@@ -32,7 +32,8 @@
         <li><a href="#contact">Kontakt</a></li>
       </ul>
 
-      <a class="btn cta" href="#reservieren">Reservieren</a>
+      <!-- Auf Handy ausgeblendet -->
+      <a class="btn cta hide-sm" href="#reservieren">Reservieren</a>
     </nav>
   </header>
 
@@ -80,12 +81,20 @@
       <div class="card pad">
         <p>Telefon: <a class="link" href="tel:+497161000000">07161 / 000000</a> · E-Mail: <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
         <form id="reserveForm" class="reserve-form" novalidate>
+          <!-- Auf Handy oben & zentriert (per CSS) -->
+          <button class="btn primary reserve-submit" type="submit">Anfrage senden</button>
+
           <label><span>Datum</span><input type="date" name="date" required></label>
           <label><span>Uhrzeit</span><input type="time" name="time" required></label>
           <label><span>Personen</span><input type="number" name="people" min="1" max="12" value="2" required></label>
           <label class="span-2"><span>Name</span><input type="text" name="name" placeholder="Ihr Name" required autocomplete="name"></label>
           <label class="span-2"><span>Telefon</span><input type="tel" name="phone" placeholder="Ihre Telefonnummer" required autocomplete="tel"></label>
-          <button class="btn primary" type="submit">Anfrage senden</button>
+
+          <!-- Auf Desktop unten rechts (per CSS), auf Handy oben -->
+          <div class="reserve-actions">
+            <button class="btn primary" type="submit">Anfrage senden</button>
+          </div>
+
           <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -123,7 +132,7 @@
     </div>
   </footer>
 
-  <!-- Sticky CTA nur auf Mobile per CSS sichtbar -->
+  <!-- Sticky CTA: unten mittig (nur Mobile sichtbar) -->
   <div class="mobile-cta">
     <a class="btn primary" href="#reservieren">Jetzt reservieren</a>
   </div>

@@ -1,4 +1,4 @@
-/* DESKTOP: unverändert elegantes Weiß/Grau + Gold  */
+/* Desktop (unverändert edel) */
 :root{
   --bg:#f7f7f9; --panel:#ffffff; --text:#1f2937; --muted:#6b7280; --ink:#0b1220;
   --accent:#111827; --gold:#C9A227; --radius:14px; --shadow:0 10px 30px rgba(17,24,39,.06);
@@ -6,41 +6,41 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{margin:0;height:100%}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text)}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
 img{max-width:100%;display:block}
 .container{width:min(1100px,92%);margin-inline:auto}
 .link{color:#2563eb;text-decoration:underline;text-underline-offset:3px}
 .skip-link{position:absolute;left:-9999px}
 .skip-link:focus{left:16px;top:16px;background:#111827;color:#fff;padding:.5rem .75rem;border-radius:10px;z-index:999}
 
-/* Header / Nav (Desktop Default) */
+/* Header / Nav (Desktop) */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid #e5e7eb}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;position:relative}
 .brand{display:flex;gap:.6rem;align-items:center;text-decoration:none}
-.logo-img{border-radius:50%; box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.logo-img{border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .wordmark{font-weight:600;letter-spacing:.2px;color:#111827}
 .nav-links{list-style:none;display:flex;gap:1.2rem;margin:0;padding:0}
 .nav a{color:#111827;text-decoration:none;position:relative}
 .nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s ease}
 .nav a:hover::after{width:100%}
 .menu-toggle{display:none}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.1rem;border-radius:999px;border:1px solid #e5e7eb;background:#ffffff;color:#111827;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .15s ease, box-shadow .25s ease}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.1rem;border-radius:999px;border:1px solid #e5e7eb;background:#ffffff;color:#111827;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .15s ease,box-shadow .25s ease}
 .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#ffffff}
-.btn.outline{background:#ffffff;border-color:#d1d5db;color:#111827}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.outline{background:#fff;border-color:#d1d5db;color:#111827}
 
-/* Gold detail + Hero */
-.gold-divider{height:4px;background:linear-gradient(90deg, transparent, var(--gold), transparent)}
+/* Gold + Hero */
+.gold-divider{height:4px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .hero{border-bottom:1px solid #e5e7eb;background:radial-gradient(1200px 600px at 50% -200px, rgba(17,24,39,.06), transparent 60%), var(--bg)}
 .hero-inner{padding:6.5rem 0 4.5rem}
 .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .9rem;border-radius:999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb}
-.display{font-family:"Playfair Display", Georgia, serif; font-weight:700; color:var(--ink); font-size:3rem; line-height:1.1; margin:.6rem 0}
+.display{font-family:"Playfair Display", Georgia, serif;font-weight:700;color:var(--ink);font-size:3rem;line-height:1.1;margin:.6rem 0}
 .lead{color:var(--muted);max-width:720px}
 .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.1rem}
 
 /* Sections */
 .section{padding:3.6rem 0;border-top:1px solid #eef0f3}
-.section h2{font-family:"Playfair Display", Georgia, serif; font-weight:600; font-size:2rem; margin:0 0 1rem; color:var(--ink)}
+.section h2{font-family:"Playfair Display", Georgia, serif;font-weight:600;font-size:2rem;margin:0 0 1rem;color:var(--ink)}
 .card{background:var(--panel);border:1px solid #e5e7eb;border-radius:var(--radius);box-shadow:var(--shadow)}
 .card.pad{padding:1.25rem}
 .note{margin-top:.6rem;color:#6b7280;font-size:.9rem}
@@ -55,14 +55,15 @@ img{max-width:100%;display:block}
 
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-.gallery img{border-radius:12px;border:1px solid #e5e7eb;filter:grayscale(8%);transition:transform .25s ease, filter .25s ease}
+.gallery img{border-radius:12px;border:1px solid #e5e7eb;filter:grayscale(8%);transition:transform .25s ease,filter .25s ease}
 .gallery img:hover{transform:translateY(-2px);filter:grayscale(0%)}
 
 /* Reservieren */
-.reserve-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.reserve-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;align-items:start}
 .reserve-form label{display:flex;flex-direction:column;gap:.4rem;color:#111827}
 .reserve-form input{padding:.85rem;border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;color:#111827}
 .reserve-form .span-2{grid-column:span 2}
+.reserve-actions{display:flex;justify-content:flex-end;grid-column:span 2;margin-top:.4rem}
 .form-msg{margin:.6rem 0 0;color:#166534}
 
 /* Öffnungszeiten & Footer */
@@ -72,15 +73,16 @@ img{max-width:100%;display:block}
 .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .footer-links{display:flex;gap:1rem}
 
-/* Sticky CTA standardmäßig unsichtbar (nur Mobile zeigt es) */
+/* Standard: mobile CTA unsichtbar */
 .mobile-cta{display:none}
 
-/* ---------- MOBILE-ONLY VERBESSERUNGEN (Desktop bleibt unverändert) ---------- */
-@media (max-width: 820px){
+/* ---------------- MOBILE ONLY (≤820px) ---------------- */
+@media (max-width:820px){
   .container{width:100%;padding-left:18px;padding-right:18px}
 
-  /* Mobile Menü: Toggle sichtbar, Liste als Dropdown */
+  /* Nav: Toggle sichtbar, Links als Dropdown, CTA oben ausgeblendet */
   .menu-toggle{display:inline-block;border:1px solid #e5e7eb;background:#fff;border-radius:12px;padding:.55rem .7rem;font-size:1.1rem;line-height:1}
+  .hide-sm{display:none} /* Nav-CTA ausblenden */
   .nav-links{
     display:none;position:absolute;right:18px;top:64px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;
     box-shadow:0 20px 40px rgba(0,0,0,.08);padding:6px;min-width:240px;z-index:60
@@ -89,21 +91,27 @@ img{max-width:100%;display:block}
   .nav-links a{display:block;padding:.7rem .85rem;border-radius:10px}
   .nav-links a:hover{background:#f9fafb}
 
-  /* Typo/Spacing mobiler */
-  .hero-inner{padding:56px 0 40px}
-  .display{font-size:clamp(28px, 6vw, 36px)}
-  .gallery{grid-template-columns:1fr;gap:.8rem}
+  /* Hero: „Speisekarte“-Button mittig */
+  .actions{justify-content:center}
+
+  /* Reservieren: Submit-Button oben & mittig */
   .reserve-form{grid-template-columns:1fr}
   .reserve-form .span-2{grid-column:span 1}
+  .reserve-actions{display:none} /* den unteren Button auf Mobile verstecken */
+  .reserve-submit{order:-1;justify-self:center;margin-bottom:.5rem}
+
+  /* Gallery 1 Spalte */
+  .gallery{grid-template-columns:1fr}
 
   /* Footer wrap */
   .footer-grid{flex-wrap:wrap}
 
-  /* Mobile Sticky CTA sichtbar */
+  /* Sticky CTA unten mittig, fixiert */
   .mobile-cta{
-    position:sticky; bottom:0; left:0; right:0; display:flex; justify-content:center;
+    position:fixed; left:0; right:0; bottom:0; z-index:70;
     padding:12px 12px calc(env(safe-area-inset-bottom) + 12px);
     background:linear-gradient(180deg, transparent, rgba(255,255,255,.98) 30%);
+    display:flex; justify-content:center; align-items:center;
   }
-  .mobile-cta .btn{width:100%;max-width:520px}
+  .mobile-cta .btn{width:min(520px, 100%)}
 }

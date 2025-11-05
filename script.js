@@ -2,7 +2,7 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Mobile Menü (wir greifen nur auf CSS-Klasse zu; Desktop bleibt unberührt)
+// Mobile Menü (Desktop bleibt unberührt)
 const nav = document.querySelector('.nav');
 const toggle = document.querySelector('.menu-toggle');
 const links = document.getElementById('nav-links');
