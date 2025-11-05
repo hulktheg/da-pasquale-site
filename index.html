@@ -16,12 +16,11 @@
 
   <header class="site-header" aria-label="Hauptnavigation">
     <nav class="nav container" aria-label="Primäre Navigation">
-      <a class="brand" href="#home" aria-label="Startseite">
+      <a class="brand" href="#home">
         <img src="logo-dp.svg" alt="Da Pasquale Logo" class="logo-img" width="36" height="36">
         <span class="wordmark">Da Pasquale</span>
       </a>
 
-      <!-- Mobile Toggle -->
       <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
 
       <ul id="nav-links" class="nav-links">
@@ -31,12 +30,12 @@
         <li><a href="#contact">Kontakt</a></li>
       </ul>
 
-      <!-- Auf Mobile verstecken -->
+      <!-- Mobile blendet das via CSS aus -->
       <a class="btn cta hide-on-mobile" href="#reservieren">Reservieren</a>
     </nav>
   </header>
 
-  <main id="home" class="hero" role="main">
+  <main id="home" class="hero">
     <div class="gold-divider" aria-hidden="true"></div>
     <div class="hero-inner container fade-in">
       <span class="pill">Ristorante · Pizzeria · Göppingen</span>
@@ -79,17 +78,19 @@
       <h2>Reservieren</h2>
       <div class="card pad">
         <p>Telefon: <a class="link" href="tel:+497161000000">07161 / 000000</a> · E-Mail: <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
+
+        <!-- EINZIGER Submit-Button -->
         <form id="reserveForm" class="reserve-form" novalidate>
-          <!-- EIN Button, wird via CSS je nach Gerät positioniert -->
           <button class="btn primary reserve-submit" type="submit">Anfrage senden</button>
 
-          <label><span>Datum</span><input type="date" name="date" required></label>
-          <label><span>Uhrzeit</span><input type="time" name="time" required></label>
-          <label><span>Personen</span><input type="number" name="people" min="1" max="12" value="2" required></label>
-          <label class="span-2"><span>Name</span><input type="text" name="name" placeholder="Ihr Name" required autocomplete="name"></label>
-          <label class="span-2"><span>Telefon</span><input type="tel" name="phone" placeholder="Ihre Telefonnummer" required autocomplete="tel"></label>
+          <label class="f-date"><span>Datum</span><input type="date" name="date" required></label>
+          <label class="f-time"><span>Uhrzeit</span><input type="time" name="time" required></label>
+          <label class="f-people"><span>Personen</span><input type="number" name="people" min="1" max="12" value="2" required></label>
+          <label class="f-name span-2"><span>Name</span><input type="text" name="name" placeholder="Ihr Name" required autocomplete="name"></label>
+          <label class="f-phone span-2"><span>Telefon</span><input type="tel" name="phone" placeholder="Ihre Telefonnummer" required autocomplete="tel"></label>
+
+          <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
         </form>
-        <p id="reserveMsg" class="form-msg" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -125,9 +126,11 @@
     </div>
   </footer>
 
-  <!-- Sticky CTA: unten mittig (nur Mobile sichtbar) -->
+  <!-- Sticky CTA (nur Mobile sichtbar) -->
   <div class="mobile-cta">
-    <a class="btn primary" href="#reservieren">Jetzt reservieren</a>
+    <div class="container">
+      <a class="btn primary wide" href="#reservieren">Jetzt reservieren</a>
+    </div>
   </div>
 
   <script src="script.js" defer></script>
