@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ristorante Da Pasquale – Göppingen | Italienische Küche</title>
   <meta name="description" content="Authentische italienische Küche in Göppingen – Pizza aus dem Steinofen, frische Pasta & Antipasti." />
-  <link rel="icon" type="image/svg+xml" href="logo-dp.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo-dp.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,8 +16,8 @@
 
   <header class="site-header" aria-label="Hauptnavigation">
     <nav class="nav container" aria-label="Primäre Navigation">
-      <a class="brand" href="#home">
-        <img src="logo-dp.svg" alt="Da Pasquale Logo" class="logo-img" width="36" height="36">
+      <a class="brand" href="#home" aria-label="Startseite">
+        <img src="logo-dp.svg" alt="Da Pasquale Logo" class="logo-img" width="36" height="36" />
         <span class="wordmark">Da Pasquale</span>
       </a>
 
@@ -30,12 +30,12 @@
         <li><a href="#contact">Kontakt</a></li>
       </ul>
 
-      <!-- Mobile blendet das via CSS aus -->
+      <!-- Auf Mobile ausgeblendet -->
       <a class="btn cta hide-on-mobile" href="#reservieren">Reservieren</a>
     </nav>
   </header>
 
-  <main id="home" class="hero">
+  <main id="home" class="hero" role="main">
     <div class="gold-divider" aria-hidden="true"></div>
     <div class="hero-inner container fade-in">
       <span class="pill">Ristorante · Pizzeria · Göppingen</span>
@@ -47,6 +47,7 @@
     </div>
   </main>
 
+  <!-- MENU -->
   <section id="menu" class="section">
     <div class="container">
       <h2>Auszug aus der Speisekarte</h2>
@@ -62,24 +63,58 @@
     </div>
   </section>
 
+  <!-- GALLERY (CAROUSEL) -->
   <section id="gallery" class="section">
     <div class="container">
       <h2>Galerie</h2>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1200&auto=format&fit=crop" alt="Frische Pizza aus dem Steinofen" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop" alt="Hausgemachte Pasta" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1200&auto=format&fit=crop" alt="Antipasti Auswahl" loading="lazy" decoding="async" />
+
+      <div class="carousel" role="region" aria-label="Restaurant Galerie" tabindex="0">
+        <button class="car-btn prev" aria-label="Vorheriges Bild">‹</button>
+
+        <div class="car-track" aria-live="polite">
+          <figure class="car-slide">
+            <img
+              src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1600&auto=format&fit=crop"
+              alt="Frische Pizza aus dem Steinofen"
+              loading="lazy" decoding="async">
+            <figcaption>Steinofen-Pizza</figcaption>
+          </figure>
+
+          <figure class="car-slide">
+            <img
+              src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop"
+              alt="Hausgemachte Pasta"
+              loading="lazy" decoding="async">
+            <figcaption>Hausgemachte Pasta</figcaption>
+          </figure>
+
+          <figure class="car-slide">
+            <img
+              src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1600&auto=format&fit=crop"
+              alt="Antipasti Auswahl"
+              loading="lazy" decoding="async">
+            <figcaption>Antipasti</figcaption>
+          </figure>
+        </div>
+
+        <button class="car-btn next" aria-label="Nächstes Bild">›</button>
+
+        <div class="car-dots" role="tablist" aria-label="Galerie Navigation">
+          <button class="car-dot is-active" role="tab" aria-selected="true" aria-controls="slide-1">1</button>
+          <button class="car-dot" role="tab" aria-selected="false" aria-controls="slide-2">2</button>
+          <button class="car-dot" role="tab" aria-selected="false" aria-controls="slide-3">3</button>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- RESERVIEREN -->
   <section id="reservieren" class="section">
     <div class="container">
       <h2>Reservieren</h2>
       <div class="card pad">
         <p>Telefon: <a class="link" href="tel:+497161000000">07161 / 000000</a> · E-Mail: <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
 
-        <!-- EINZIGER Submit-Button -->
         <form id="reserveForm" class="reserve-form" novalidate>
           <button class="btn primary reserve-submit" type="submit">Anfrage senden</button>
 
@@ -95,6 +130,7 @@
     </div>
   </section>
 
+  <!-- ÖFFNUNGSZEITEN -->
   <section id="hours" class="section">
     <div class="container">
       <h2>Öffnungszeiten</h2>
@@ -105,6 +141,7 @@
     </div>
   </section>
 
+  <!-- KONTAKT + MAP -->
   <section id="contact" class="section">
     <div class="container">
       <h2>Kontakt</h2>
@@ -113,6 +150,19 @@
         <p><strong>Telefon:</strong> <a class="link" href="tel:+497161000000">07161 / 000000</a></p>
         <p><strong>E-Mail:</strong> <a class="link" href="mailto:info@dapasquale.de">info@dapasquale.de</a></p>
       </div>
+    </div>
+
+    <!-- Map direkt unter Kontakt -->
+    <div class="container map-wrap">
+      <div class="map-card" aria-label="Google Maps Karte">
+        <iframe
+          src="https://www.google.com/maps?q=Hauptstraße+20,+73033+Göppingen&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ristorante Da Pasquale auf Google Maps"></iframe>
+      </div>
+      <p class="note">Sie finden uns im Herzen von Göppingen – Parkmöglichkeiten in der Nähe.</p>
     </div>
   </section>
 
@@ -126,7 +176,7 @@
     </div>
   </footer>
 
-  <!-- Sticky CTA (nur Mobile sichtbar) -->
+  <!-- Sticky CTA: unten mittig (nur Mobile sichtbar) -->
   <div class="mobile-cta">
     <div class="container">
       <a class="btn primary wide" href="#reservieren">Jetzt reservieren</a>
