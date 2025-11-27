@@ -42,8 +42,76 @@ if (form && msg) {
     msg.textContent = `Danke, ${name}! Wir prüfen Ihre Anfrage am ${date} um ${time} für ${people} Personen und melden uns telefonisch.`;
     msg.style.color = '#166534';
     form.reset();
+    const pickers = form.querySelectorAll('.time-select, .person-select, .date-select');
+    pickers.forEach(p => {
+      const hidden = p.querySelector('input[type="hidden"]');
+      const label = p.querySelector('.time-label, .person-label, .date-label');
+      const def = label?.dataset?.default || 'Auswählen';
+      if (hidden) hidden.value = '';
+      if (label) label.textContent = def;
+      p.classList.add('placeholder');
+    });
   });
 }
+
+// Custom Dropdowns (Datum, Uhrzeit & Personen)
+(() => {
+  const widgets = document.querySelectorAll('.time-select, .person-select, .date-select');
+  if (!widgets.length) return;
+
+  widgets.forEach(widget => {
+    const trigger = widget.querySelector('button');
+    const list = widget.querySelector('ul');
+    const nativeDate = widget.querySelector('.date-native');
+    const input = widget.querySelector('input[type="hidden"]');
+    const label = widget.querySelector('.time-label, .person-label, .date-label');
+    if (!trigger || !input || !label) return;
+
+    const defaultText = label.textContent || 'Auswählen';
+    label.dataset.default = defaultText;
+    widget.classList.add('placeholder');
+
+    const close = () => {
+      widget.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    const open = () => {
+      widget.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+
+    if (list) {
+      trigger.addEventListener('click', () => {
+        const isOpen = widget.classList.contains('open');
+        isOpen ? close() : open();
+      });
+
+      list.querySelectorAll('li').forEach(li => {
+        li.addEventListener('click', () => {
+          const val = li.getAttribute('data-value') || '';
+          input.value = val;
+          label.textContent = val || defaultText;
+          widget.classList.toggle('placeholder', !val);
+          close();
+        });
+      });
+    }
+
+    if (nativeDate) {
+      trigger.addEventListener('click', () => nativeDate.showPicker && nativeDate.showPicker());
+      nativeDate.addEventListener('change', () => {
+        const val = nativeDate.value;
+        input.value = val;
+        label.textContent = val || defaultText;
+        widget.classList.toggle('placeholder', !val);
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!widget.contains(e.target)) close();
+    });
+  });
+})();
 
 // ===== Carousel mit Autoplay + smarter Swipe =====
 (() => {
