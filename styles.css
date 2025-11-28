@@ -358,6 +358,12 @@ img{max-width:100%;display:block}
     margin-bottom: .2rem;
     width: 100%;
   }
+
+  .time-select,
+  .person-select,
+  .date-select{
+    width:100%;
+  }
 }
 
 
@@ -396,6 +402,7 @@ img{max-width:100%;display:block}
   .nav-links a:hover{background:#f9fafb}
 
   .actions{justify-content:center}
+  .actions .btn.primary{width:100%;max-width:420px}
 
   .reserve-form{grid-template-columns:1fr;grid-template-areas:
       "date" "time" "people" "name" "phone" "msg" "submit";}
