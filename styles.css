@@ -45,7 +45,7 @@ img{max-width:100%;display:block}
   filter:blur(20px); opacity:.9; pointer-events:none;
 }
 .hero-inner{
-  padding:6.5rem 0 4.5rem;
+  padding:5.2rem 0 3.6rem;
   position:relative; z-index:1;
   text-align:left;
 }
@@ -150,7 +150,7 @@ img{max-width:100%;display:block}
 }
 
 @media (max-width:640px){
-  .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
+  .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
   .menu-card{padding:1rem;border-radius:14px}
   .menu-item{
     grid-template-columns:56px 1fr;
@@ -161,6 +161,10 @@ img{max-width:100%;display:block}
   .menu-item h3{font-size:.96rem}
   .desc{font-size:.88rem}
   .price{font-size:.92rem}
+}
+
+@media (max-width:520px){
+  .menu-grid{grid-template-columns:1fr;gap:.8rem}
 }
 
 /* ===== Carousel ===== */
@@ -225,7 +229,7 @@ img{max-width:100%;display:block}
 .form-msg{grid-area:msg;margin:.6rem 0 0;color:#166534}
 .reserve-form label{
   display:flex;flex-direction:column;gap:.4rem;color:#111827;
-  background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:.85rem .95rem;
+  background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:.8rem .9rem;
 }
 .reserve-form label span{
   font-size:1.02rem;
@@ -364,6 +368,10 @@ img{max-width:100%;display:block}
   .date-select{
     width:100%;
   }
+
+  .reserve-form label{
+    padding:.75rem .85rem;
+  }
 }
 
 
@@ -404,7 +412,7 @@ img{max-width:100%;display:block}
   .actions{justify-content:center}
   .actions .btn.primary{width:100%;max-width:420px}
   .hero-inner{
-    padding:3.2rem 0 2.4rem;
+    padding:2.2rem 0 1.8rem;
     text-align:center;
   }
 
