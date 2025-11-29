@@ -72,6 +72,13 @@ img{max-width:100%;display:block}
   border:1px solid rgba(201,162,39,.26); font-weight:600; letter-spacing:.1px; font-size:.9rem;
 }
 
+@media (max-width:640px){
+  .hero-features{gap:.6rem; margin-top:1rem}
+  .feature{padding:.7rem .8rem; border-radius:12px}
+  .badge{padding:.3rem .65rem; font-size:.85rem}
+  .feature p{font-size:.95rem}
+}
+
 /* ===== Sections ===== */
 .section{padding:3.6rem 0;border-top:1px solid #eef0f3}
 .section h2{font-family:"Playfair Display", Georgia, serif;font-weight:600;font-size:2rem;margin:0 0 1rem;color:var(--ink)}
@@ -338,15 +345,17 @@ img{max-width:100%;display:block}
       "phone"
       "contact"
       "msg"
-      "submit";          /* Button am Ende */
+      "submit";
+    gap:.75rem;
   }
 
   .reserve-submit {
     grid-area: submit;
     justify-self: center;
-    margin-top: .6rem;
+    margin-top: .4rem;
     margin-bottom: .2rem;
     width: 100%;
+    padding:.9rem 1rem;
   }
 
   .time-select,
@@ -356,7 +365,9 @@ img{max-width:100%;display:block}
   }
 
   .reserve-form label{
-    padding:.75rem .85rem;
+    padding:.7rem .8rem;
+    border-radius:10px;
+    background:#fff;
   }
 }
 
